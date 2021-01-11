@@ -1,0 +1,67 @@
+﻿@font-face {
+    font-family: 'Vazir';
+    src: url('/Content/Fonts/Vazir-FD.eot');
+    src: local('☺'), url('/Content/Fonts/Vazir-FD.woff') format('woff'), url('/Content/Fonts/Vazir-FD.ttf') format('truetype');
+}
+
+body {
+    font-family:Vazir;
+    padding:0px;
+    margin:0px;
+    
+}
+
+.loginImage {
+    background-image: url('../Image/login.jpg');
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center top;
+}
+.SematecTextYellow {
+    color: #ffd600 !important; 
+}
+.SematecTextBlue {
+    color: #133889 !important;
+}
+.textDarkShadow {
+    text-shadow: 4px 6px 8px rgba(0,0,0,0.71);
+}
+.sematecBgBlue {
+    background-color: #133889;
+}
+.roundedBorder1rem {
+    border: 1px solid #ffd600;
+    border-radius: 1rem !important;
+}
+.radius1rem {
+    border-radius: 1rem !important;
+}
+.Sitenav {
+    background-color: #133889 !important;
+    
+}
+    .Sitenav a {
+        text-decoration: none;
+        color: #ffd600;
+    }
+
+   .fontSmall12{
+       font-size:12px;
+   }
+.form-group{
+    margin-bottom:5px !important;
+}
+.hr-leftFade {
+    height: 1px;
+    border: none;
+    background-image: linear-gradient(-90deg, #c2c0c0, transparent);
+}
+
+.hr-rightFade {
+    height: 1px;
+    border: none;
+    background-image: linear-gradient(90deg, #c2c0c0, transparent);
+}
+.width300{
+    width:300px;
+}

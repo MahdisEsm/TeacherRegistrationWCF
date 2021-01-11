@@ -1,0 +1,383 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+   <link href="Content/bootstrap-rtl.css" rel="stylesheet" />
+    <script src="Scripts/jquery-3.0.0.min.js"></script>
+    <script src="Scripts/bootstrap.bundle.js"></script>
+    <link href="Content/font-awesome.css" rel="stylesheet" />
+    <link href="Content/Css/SiteCss.css" rel="stylesheet" />
+    <script src="Scripts/Site.js"></script>
+    <title>FavoriteCourses</title>
+    <style>
+        #favCourseTable,#modalTable th, td {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header class="d-felx justify-content-center">
+        <nav class="navbar Sitenav w-75 mx-auto radius1rem shadow">
+            <a class="navbar-brand font-weight-bold" href="#">
+                <img src="Content/Image/logoYellow.png" width="70" height="70" class="d-inline-block align-center" alt="" loading="lazy">
+                جذب مدرس دوره های تخصصی IT
+            </a>
+        </nav>
+        <div class="w-75 mx-auto mt-3 text-center">
+            <img src="Content/Image/FigmaProjectIcons/Person-blue.png" />
+            <i class="fa fa-circle" style="font-size: 6px; color: #133889;"></i>
+            <i class="fa fa-circle" style="font-size: 6px; color: #133889;"></i>
+            <i class="fa fa-circle" style="font-size: 6px; color: #133889;"></i>
+            <i class="fa fa-circle" style="font-size: 6px; color: #133889;"></i>
+            <i class="fa fa-circle" style="font-size: 6px; color: #133889;"></i>
+            <i class="fa fa-circle" style="color: #133889;"></i>
+            <i class="fa fa-circle" style="font-size: 6px; color: #133889;"></i>
+            <i class="fa fa-circle" style="font-size: 6px; color: #133889;"></i>
+            <i class="fa fa-circle" style="font-size: 6px; color: #133889;"></i>
+            <i class="fa fa-circle" style="font-size: 6px; color: #133889;"></i>
+            <i class="fa fa-circle" style="font-size: 6px; color: #133889;"></i>
+            <img src="Content/Image/FigmaProjectIcons/Education-Blue.png" />
+            <i class="fa fa-circle" style="color: #133889; font-size: 6px"></i>
+            <i class="fa fa-circle" style="color: #133889; font-size: 6px"></i>
+            <i class="fa fa-circle" style="color: #133889; font-size: 6px"></i>
+            <i class="fa fa-circle" style="color: #133889; font-size: 6px"></i>
+            <i class="fa fa-circle" style="color: #133889; font-size: 6px"></i>
+            <i class="fa fa-circle" style="color: #133889;"></i>
+            <i class="fa fa-circle" style="color: #133889; font-size: 6px"></i>
+            <i class="fa fa-circle" style="color: #133889; font-size: 6px"></i>
+            <i class="fa fa-circle" style="color: #133889; font-size: 6px"></i>
+            <i class="fa fa-circle" style="color: #133889; font-size: 6px"></i>
+            <i class="fa fa-circle" style="color: #133889; font-size: 6px"></i>
+            <img src="Content/Image/FigmaProjectIcons/Job-Blue.png" />
+            <i class="fa fa-circle" style="color: #133889; font-size: 6px"></i>
+            <i class="fa fa-circle" style="color: #133889; font-size: 6px"></i>
+            <i class="fa fa-circle" style="color: #133889; font-size: 6px"></i>
+            <i class="fa fa-circle" style="color: #133889; font-size: 6px"></i>
+            <i class="fa fa-circle" style="color: #133889; font-size: 6px"></i>
+            <i class="fa fa-circle" style="color: #133889;"></i>
+            <i class="fa fa-circle" style="color: #133889; font-size: 6px"></i>
+            <i class="fa fa-circle" style="color: #133889; font-size: 6px"></i>
+            <i class="fa fa-circle" style="color: #133889; font-size: 6px"></i>
+            <i class="fa fa-circle" style="color: #133889; font-size: 6px"></i>
+            <i class="fa fa-circle" style="color: #133889; font-size: 6px"></i>
+            <img src="Content/Image/FigmaProjectIcons/Teacher-Blue.png" />
+            <i class="fa fa-circle" style="color: #133889; font-size: 6px"></i>
+            <i class="fa fa-circle" style="color: #133889; font-size: 6px"></i>
+            <i class="fa fa-circle" style="color: #133889; font-size: 6px"></i>
+            <i class="fa fa-circle" style="color: #133889; font-size: 6px"></i>
+            <i class="fa fa-circle" style="color: #133889; font-size: 6px"></i>
+            <i class="fa fa-circle" style="color: #133889;"></i>
+            <i class="fa fa-circle" style="color: #133889; font-size: 6px"></i>
+            <i class="fa fa-circle" style="color: #133889; font-size: 6px"></i>
+            <i class="fa fa-circle" style="color: #133889; font-size: 6px"></i>
+            <i class="fa fa-circle" style="color: #133889; font-size: 6px"></i>
+            <i class="fa fa-circle" style="color: #133889; font-size: 6px"></i>
+            <img src="Content/Image/FigmaProjectIcons/Document-Blue.png" />
+            <i class="fa fa-circle" style="color: #133889; font-size: 6px"></i>
+            <i class="fa fa-circle" style="color: #133889; font-size: 6px"></i>
+            <i class="fa fa-circle" style="color: #133889; font-size: 6px"></i>
+            <i class="fa fa-circle" style="color: #133889; font-size: 6px"></i>
+            <i class="fa fa-circle" style="color: #133889; font-size: 6px"></i>
+            <i class="fa fa-circle" style="color: #133889;"></i>
+            <i class="fa fa-circle" style="color: #133889; font-size: 6px"></i>
+            <i class="fa fa-circle" style="color: #133889; font-size: 6px"></i>
+            <i class="fa fa-circle" style="color: #133889; font-size: 6px"></i>
+            <i class="fa fa-circle" style="color: #133889; font-size: 6px"></i>
+            <i class="fa fa-circle" style="color: #133889; font-size: 6px"></i>
+            <img src="Content/Image/FigmaProjectIcons/LikeToTeach-Blue.png" />
+        </div>
+    </header>
+
+    <section class="radius1rem shadow d-felx justify-content-center w-50 mx-auto m-4 p-3">
+        <div>
+            <h5 class="text-secondary">تمایل به تدریس دوره ها </h5>
+            <hr class="hr-leftFade" />
+        </div>
+
+        <form class="m-1 fontSmall12" id="form">
+            <p id="error" class="text-danger"></p>
+            <p>دوره هایی که تمایل به تدریس دارید را وارد نمایید:</p>
+            <div class="row">
+                <div class="col-11 mx-auto justify-content-center">
+
+                    <table class="table table-hover" id="favCourseTable">
+                        <thead class="justify-content-around">
+                            <tr>
+                                <th style="width: 20%;" scope="col">ردیف</th>
+                                <th style="width: 60%;" scope="col">نام دوره</th>
+                            </tr>
+                        </thead>
+                        <tbody class="justify-content-around">
+                            
+                        </tbody>
+                    </table>
+
+                </div>
+            </div>
+
+            <hr class="hr-leftFade" />
+
+
+            <div>
+                <a id="addNewRow" class="btn btn-light btn-sm float-md-right">افزودن ردیف جدید <i class="fa fa-plus"></i></a>
+            </div>
+            <div>
+                <a id="deleteFavCourse" class="btn btn-light btn-sm float-md-left">حذف <i class="fa fa-trash"></i></a>
+            </div>
+            <br />
+            <br />
+            <br />
+            <div class="row  d-flex justify-content-md-between" id="btnParent">
+                <div class="col-md-2">
+                    <button id="prevButton" class="btn btn-sm SematecTextYellow sematecBgBlue fontSmall12"><i class="fa fa-arrow-circle-o-right text-warning"></i>مرحله قبل </button>
+                </div>
+                <div class="col-md-2">
+                    <button id="finalRegistration" class="btn btn-sm SematecTextYellow sematecBgBlue fontSmall12">ثبت نهایی <i class="fa fa-check text-warning"></i></button>
+                </div>
+            </div>
+
+
+
+        </form>
+    </section>
+
+    <!------------------------------------Modal For Sematec Course List---------------------------------->
+
+
+    <div class="modal" id="myModal" tabindex="-1" role="dialog">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalHeader">دوره های سماتک</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+
+                    <form class="p-3" id="modalForm">
+                        <table class="table table-hover table-sm" id="modalTable">
+                            <thead class="thead-dark">
+                                <tr>
+                                    <th>ردیف</th>
+                                    <th>نام دوره</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">انصراف</button>
+                            <button type="button" class="btn btn-primary" id="modalSave">اضافه</button>
+                        </div>
+                    </form>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</body>
+<script type="text/javascript">
+    //-----------------------------------Ctor--------------------------
+    $('#myModal').modal({
+        keyboard: false,
+        show: false
+    });
+    var USSematecCourse = [];
+    var SFavoriteCourse = [];
+    var rowIDSelected = null;
+    //getSematecCourseInFirst
+    $.ajax({
+        url: 'http://localhost:60404/RegistrationService.svc/GetSematecCourse',
+        
+        type: "get",
+        async: false,
+        success: function (data) {
+            debugger;
+            USSematecCourse = data.GetSematecCourseResult;
+        },
+        error: function () {
+            connectionError();
+        }
+    });
+
+    //getPersonID
+    var queryString = decodeURIComponent(window.location.search);
+
+    if (queryString != "") {
+        queryString = queryString.substring(1);
+        var queries = queryString.split("&");
+        var personID = queries[0];
+    }
+    //-------------------------------Functions----------------------------------
+    function refreshModalTable() {
+        rowIDSelected = null;
+        $('#modalTable').find('tbody').empty();
+        for (var i = 0; i < USSematecCourse.length; i++) {
+            
+                $('#modalTable').find('tbody').append(
+                    $('<tr/>')
+                        .append($('<td/>').text(i+1))
+                        .append($('<td/>').text(USSematecCourse[i].Name))
+                );
+        };
+        //event
+        $('#modalTable tr').click(function (e) {
+            $('tr').attr('class', '');
+            var row = e.currentTarget;
+            if (row.parentElement.localName == 'thead') {
+                return;
+            }
+            row.setAttribute('class', 'bg-light');
+            rowIDSelected = row.firstElementChild.textContent - 1;
+        });
+        
+    };
+    function refreshFavTable() {
+        debugger;
+        rowIDSelected = null;
+        $('#favCourseTable').find('tbody').empty();
+        for (var i = 0; i < SFavoriteCourse.length; i++) {
+                $('#favCourseTable').find('tbody').append(
+                    $('<tr/>')
+                        .append($('<td/>').text(i+1))
+                        .append($('<td/>').text(SFavoriteCourse[i].Name))
+                );
+        };
+         $('#favCourseTable tr').click(function (e) {
+            $('tr').attr('class', '');
+            var row = e.currentTarget;
+            if (row.parentElement.localName == 'thead') {
+                return;
+            }
+            row.setAttribute('class', 'bg-light');
+            rowIDSelected = row.firstElementChild.textContent - 1;
+        });
+
+
+    };
+    //-----------------------------Events----------------------------
+    $('#addNewRow').click(function () {
+        refreshModalTable();
+        $('#myModal').modal('show');
+    });
+
+   
+    $('#modalSave').click(function () {
+        debugger;
+        if (rowIDSelected == null) {
+            alert("لطفا یک دوره را انتخاب نمایید");
+            return;
+        }
+        var favRow = {};
+        favRow.SematecCourseID = USSematecCourse[rowIDSelected].ID;
+        favRow.PersonID = personID;
+        favRow.Name = USSematecCourse[rowIDSelected].Name;
+        SFavoriteCourse.push(favRow);
+        USSematecCourse.splice(rowIDSelected, 1);
+        $('#myModal').modal('hide');
+        rowIDSelected = null;
+        $('#error').text('');
+        refreshFavTable();
+    });
+
+    $('#deleteFavCourse').click(function () {
+        if (rowIDSelected == null) {
+            alert("لطفا یک دوره را انتخاب نمایید");
+            return;
+        }
+        var sematecRow={};
+        sematecRow.ID = SFavoriteCourse[rowIDSelected].SematecCourseID;
+        sematecRow.Name =SFavoriteCourse[rowIDSelected].Name;
+        USSematecCourse.push(sematecRow);
+        SFavoriteCourse.splice(rowIDSelected, 1);
+        rowIDSelected = null;
+        refreshFavTable();
+    });
+    
+    // document.addEventListener('click', function (e) {
+    //    $('tr').attr('class', '');
+    //}, false);
+
+        //-----------------------------------------------PrevButtonEvent------------------------
+    $('#prevButton').click(function (e) {
+        debugger;
+        e.preventDefault();
+        e.stopPropagation();
+        location = '/Certificate.html?' + personID;
+    });
+    //-------------------------------------------ثبت نهایی---------------------
+    $('#finalRegistration').click(function (e) {
+        var error = 0;
+        $('#error').text('');
+         e.preventDefault();
+        if (SFavoriteCourse.length == 0) {
+            $('#error').text('لطفا حداقل یک دوره را انتخاب نمایید')
+            return;
+        }
+        var SFavCourses = [];
+        for (var i = 0; i < SFavoriteCourse.length; i++) {
+            var row = {};
+            row.ID = 0;
+            row.PersonID = SFavoriteCourse[i].PersonID;
+            row.SematecCourseID = SFavoriteCourse[i].SematecCourseID;
+            SFavCourses.push(row);
+        }
+
+            $.ajax({
+            type: "GET",
+            url: "http://localhost:60404/RegistrationService.svc/DeleteFavoriteCourseByPersonID",
+            data: { personID: personID },
+            error: function (jqXHR, textStatus, errorMessage) {
+                debugger;
+                console.log(jqXHR + '     ' + textStatus + '    ' + errorMessage);
+                alert("درخواست شما موفقیت آمیز نبود");
+                error += 1;
+                return;
+
+            },
+            success: function (data) {
+                debugger;
+                console.log(data);
+                $.ajax({
+                    type: "POST",
+                    url: "http://localhost:60404/RegistrationService.svc/SubmitFavoriteCourse",
+                    data: JSON.stringify({ favoriteCourses: SFavCourses }),
+                    contentType: "application/json",
+                    dataType: "json",
+                    error: function (jqXHR, textStatus, errorMessage) {
+                        debugger;
+                        console.log(jqXHR + '     ' + textStatus + '    ' + errorMessage);
+                        alert("درخواست شما موفقیت آمیز نبود");
+                        error += 1;
+                        return;
+
+                    },
+                    success: function (data) {
+                        debugger;
+                        console.log(data);
+                        if (error == 0) {
+                            location = '/final.html?' + personID;
+                        }
+                    }
+
+                });
+
+            }
+
+        });
+        
+
+    });
+    
+
+</script>
+
+
+
+</html>

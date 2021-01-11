@@ -1,0 +1,99 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link href="Content/bootstrap-rtl.css" rel="stylesheet" />
+    <script src="Scripts/jquery-3.0.0.min.js"></script>
+    <script src="Scripts/bootstrap.bundle.js"></script>
+    <link href="Content/Css/SiteCss.css" rel="stylesheet" />
+    <link href="Content/font-awesome.css" rel="stylesheet" />
+    <title>Login</title>
+</head>
+<body class="rtl loginImage">
+    <section>
+        <div class="container min-vh-100">
+            <div class="row min-vh-100">
+                <div class="col d-flex justify-content-center align-items-center flex-column">
+                    <h2 class="font-weight-bold font-weight-bolder SematecTextYellow textDarkShadow ">جذب مدرس دوره های تخصصی IT</h2>
+                    <h3 class="font-weight-bold font-weight-bolder text-dark textDarkShadow ">موسسه آموزشی سماتک</h3>
+                    <button type="button" class="btn shadow-lg SematecTextYellow sematecBgBlue" id="startBtn">شروع ثبت نام <i class="fa fa-chevron-circle-left"></i></button>
+                </div>
+                <div class="col d-flex justify-content-center align-items-center">
+                    <form class="roundedBorder1rem p-5" style="border-right: 40px solid rgba(19, 56, 137,0.5); background-color: rgba(199, 199, 199,0.3);">
+                        <div class="form-group">
+                            <input type="text" class="form-control" required id="UserNameLoginPage" placeholder="&#128100; نام کاربر">
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" required id="PasswordLoginPage" placeholder="&#9919; کلمه عبور ">
+                        </div>
+                        <div class="text-danger text-sm-center" id="error">
+                        </div>
+                        <div class="form-group form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">مرا به خاطر بسپار</label>
+                        </div>
+                        <button type="button" id="loginBtn" class="btn shadow-lg SematecTextYellow sematecBgBlue">ورود و ادامه ثبت نام <i class="fa fa-sign-in"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+</body>
+<script type="text/javascript">
+    $('#startBtn').click(function (e) {
+        location.href = '/PersonalInfo.html';
+    });
+
+    $('#loginBtn').click(function (e) {
+        debugger;
+        e.preventDefault();
+
+        var username = $('#UserNameLoginPage').val();
+        var password = $('#PasswordLoginPage').val();
+        $.ajax({
+            type: "POST",
+            url: "http://localhost:60404/RegistrationService.svc/Login",
+            data: JSON.stringify({ username: username, password: password }),
+            //data: "{username:' "+ username + "',password:'" + password + "'}",
+            contentType: "application/json",
+            error: function (jqXHR, textStatus, errorMessage) {
+                console.log(jqXHR + '     ' + textStatus + '    ' + errorMessage);
+
+            },
+            //success: function (data) { console.log(data) }
+            success: function (data) {
+                debugger;
+                if (data.LoginResult.Success == true) {
+                    $.ajax({
+                        type: "POST",
+                        url: "http://localhost:60404/RegistrationService.svc/GetPersonID",
+                        data: JSON.stringify({ username: username }),
+                        contentType: "application/json",
+                        error: function (jqXHR, textStatus, errorMessage) {
+                            console.log(jqXHR + '     ' + textStatus + '    ' + errorMessage);
+
+                        }, success: function (data) {
+                            var personID = data.GetPersonIDResult;
+                            location = '/PersonalInfo.html?'+personID;
+                            debugger;
+                        }
+
+                    });
+
+                } else {
+                    $('#error').text(data.LoginResult.ErrorMessage)
+                }
+            }
+
+        });
+
+        
+    });
+
+    
+</script>
+
+</html>
